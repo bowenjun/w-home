@@ -75,6 +75,7 @@ function Cont({ active }) {
               <Col xs={24} sm={12} md={8} lg={6} key={item.id}>
                 <Card
                   hoverable
+                  bordered={false}
                   style={{ width: '100%', marginBottom: 24, borderRadius: 2, overflow: 'hidden' }}
                   cover={
                     <img
@@ -92,9 +93,15 @@ function Cont({ active }) {
                     // avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
                     title={item.title}
                     description={(
-                      <div style={{ height: '90px' }}>
+                      <div style={{ height: '85px' }}>
                         <h5>{item.subtitle}</h5>
-                        {item.description}
+                        <div style={{
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          display: '-webkit-box',
+                          '-webkit-line-clamp': 3,
+                          '-webkit-box-orient': 'vertical'
+                        }}>{item.description}</div>
                       </div>
                     )}
                   />
